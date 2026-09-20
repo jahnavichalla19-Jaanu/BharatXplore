@@ -1,4 +1,4 @@
-🇮🇳 BharatXplore
+# BharatXplore
 
 Explore India state by state, district by district, village by village, in your own language. 🗺️
 
@@ -16,11 +16,13 @@ Early prototype. Built so far:
 
 Everything below is the planned vision and is not built yet.
 
-💡 Idea
+# 💡 Idea
 
 BharatXplore is one tourism platform that guides a traveller from country to state, district and village, with local information, fair prices, crowd awareness and safety tools.
 
-✨ Planned Features
+# ✨ Planned Features
+
+
 🌐 Multi-language support
 🌍 For both foreign and Indian tourists
 🎙️ AI voice-to-voice translator
@@ -36,10 +38,11 @@ BharatXplore is one tourism platform that guides a traveller from country to sta
 ⚙️ Spring Boot (planned backend)
 ☁️ GitHub Pages (hosting)
 ▶️ Run Locally
-bash
+
+# bash
 git clone https://github.com/jahnavichalla19-Jaanu/BharatXplore.git
 cd BharatXplore
 
 Open index.html in your browser.
 
-👩‍💻 Jahnavi Challa | @jahnavichalla19-Jaanu
+# 👩‍💻 Jahnavi Challa | @jahnavichalla19-Jaanu
