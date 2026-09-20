@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BharatXplore | Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+
+
+<body>
+
+<div class="stage">
+
+    <!-- Background particles -->
+    <div class="particles" id="particles"></div>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+
+        <!-- Brand -->
+        <a class="brand" href="Opening.html">
+            Bharat<span>Xplore</span>
+        </a>
+
+
+        <!-- Current Location -->
+        <div class="location-status" aria-live="polite">
+
+            <span class="status-dot"></span>
+
+            <span id="locationText">
+                Requesting your location...
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <main class="dashboard">
+
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+
+        <section class="intro">
+
+            <p class="eyebrow">
+                YOUR INDIA, YOUR JOURNEY
+            </p>
+
+            <h1>
+                Explore <span>Bharat</span>
+            </h1>
+
+            <p class="intro-copy">
+                Choose a state to discover its places, people and stories.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             INDIA MAP
+        ========================== -->
+
+        <section
+            class="explorer"
+            aria-label="India state explorer"
+        >
+
+            <div class="map-heading">
+
+                <div>
+
+                    <p class="map-kicker">
+                        INTERACTIVE ATLAS
+                    </p>
+
+                    <h2>
+                        India
+                    </h2>
+
+                </div>
+
+
+                <!-- Hidden location button
+                     kept because Dashboard.js uses it -->
+
+                <button
+                    class="locate-button"
+                    id="locateButton"
+                    type="button"
+                >
+                    Use my location
+                </button>
+
+            </div>
+
+
+
+            <!-- MAP -->
+
+            <div class="map-shell">
+
+                <div
+                    id="map"
+                    aria-label="Map of India with clickable states"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FIVE MAIN FEATURES
+        ========================== -->
+
+        <nav
+            class="feature-nav"
+            aria-label="BharatXplore features"
+        >
+
+
+            <!-- 1. AI MODE -->
+
+            <button
+                class="feature-button"
+                data-feature="AI Mode"
+                type="button"
+            >
+
+                <span class="feature-icon">
+                    ✦
+                </span>
+
+                <span>
+                    AI Mode
+                </span>
+
+            </button>
+
+
+
+            <!-- 2. QR -->
+
+            <button
+                class="feature-button"
+                data-feature="QR"
+                type="button"
+            >
+
+                <span class="feature-icon">
+                    ⌗
+                </span>
+
+                <span>
+                    QR
+                </span>
+
+            </button>
+
+
+
+            <!-- 3. WALLET -->
+
+            <button
+                class="feature-button"
+                data-feature="Wallet"
+                type="button"
+            >
+
+                <span class="feature-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Wallet
+                </span>
+
+            </button>
+
+
+
+            <!-- 4. SOS -->
+
+            <button
+                class="feature-button feature-sos"
+                data-feature="SOS"
+                type="button"
+            >
+
+                <span class="feature-icon">
+                    !
+                </span>
+
+                <span>
+                    SOS
+                </span>
+
+            </button>
+
+
+
+            <!-- 5. TRAVEL -->
+
+            <button
+                class="feature-button"
+                data-feature="Travel"
+                type="button"
+            >
+
+                <span class="feature-icon">
+                    ✈
+                </span>
+
+                <span>
+                    Travel
+                </span>
+
+            </button>
+
+
+        </nav>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         DEMO POPUP
+    ========================== -->
+
+    <div
+        class="demo-overlay"
+        id="demoOverlay"
+        hidden
+    >
+
+        <div
+            class="demo-box"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="demoTitle"
+        >
+
+
+            <!-- Close -->
+
+            <button
+                class="close-button"
+                id="closeDemo"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+
+            <p class="map-kicker">
+                BHARATXPLORE DEMO
+            </p>
+
+
+
+            <h2 id="demoTitle">
+                BharatXplore Demo
+            </h2>
+
+
+
+            <p id="demoText">
+                This experience is ready for the next step.
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     MAP DATA
+========================== -->
+
+<script src="mapdata.js"></script>
+
+
+<!-- =========================
+     DASHBOARD JAVASCRIPT
+========================== -->
+
+<script src="Dashboard.js"></script>
+
+
+<!-- =========================
+     SIMPLEMAPS INDIA MAP
+========================== -->
+
+<script src="countrymap.js"></script>
+
+
+</body>
+</html>

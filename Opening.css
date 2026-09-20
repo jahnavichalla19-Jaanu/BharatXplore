@@ -1,0 +1,176 @@
+:root{
+  --black: #06070a;
+  --cement-1: #16171c;
+  --cement-2: #202228;
+  --cement-line: #34363f;
+  --ash: #8b8f9a;
+  --blue: #35b7ff;
+  --purple: #9b6bff;
+  --white: #f2f3f6;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html, body{
+  width:100%; height:100%;
+  background: var(--black);
+  overflow:hidden;
+  font-family:'Manrope', sans-serif;
+}
+
+.stage{
+  position:relative;
+  width:100vw; height:100vh;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(53,183,255,0.07), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 80%, rgba(155,107,255,0.08), transparent 60%),
+    linear-gradient(180deg, #08090c 0%, #0c0d11 55%, #0a0b0e 100%);
+}
+
+/* faint cement texture via layered noise-like gradients */
+.stage::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+  pointer-events:none;
+}
+
+.particles{
+  position:absolute; inset:0;
+  pointer-events:none;
+}
+.particle{
+  position:absolute;
+  width:2px; height:2px;
+  border-radius:50%;
+  background: var(--blue);
+  opacity:0.35;
+  animation: drift linear infinite;
+}
+@keyframes drift{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-120vh); }
+}
+
+.screen{
+  position:absolute; inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+#splash.leaving{
+  opacity:0;
+  transform: scale(1.04);
+  pointer-events:none;
+}
+
+/* ---------- MAP + 3D DEPTH ---------- */
+.map-wrap{
+  position:relative;
+  width: min(300px, 60vw);
+  height: min(370px, 55vh);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective: 900px;
+  cursor:pointer;
+  margin-bottom: 34px;
+}
+
+.ring{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(53,183,255,0.15);
+  pointer-events:none;
+}
+.ring-outer{
+  width:118%; height:100%;
+  animation: spin 22s linear infinite;
+  border-top-color: rgba(155,107,255,0.35);
+  border-right-color: rgba(53,183,255,0.25);
+}
+.ring-inner{
+  width:96%; height:82%;
+  animation: spin 16s linear infinite reverse;
+  border-bottom-color: rgba(53,183,255,0.3);
+}
+@keyframes spin{
+  to{ transform: rotate(360deg); }
+}
+
+.india-svg{
+  width:100%; height:100%;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.6));
+  transition: transform .15s ease-out;
+}
+
+.india-path{
+  fill: rgba(32,34,40,0.55);
+  stroke: var(--blue);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2170;
+  stroke-dashoffset: 2170;
+  filter: drop-shadow(0 0 6px rgba(53,183,255,0.5));
+}
+
+.india-path.tracing{
+  animation: trace 2.6s cubic-bezier(.65,0,.35,1) forwards;
+}
+.india-path.pulsing{
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
+
+@keyframes trace{
+  to{ stroke-dashoffset: 0; }
+}
+
+@keyframes pulseGlow{
+  0%, 100%{
+    stroke: var(--blue);
+    filter: drop-shadow(0 0 6px rgba(53,183,255,0.55));
+  }
+  50%{
+    stroke: var(--purple);
+    filter: drop-shadow(0 0 22px rgba(155,107,255,0.75));
+  }
+}
+
+/* ---------- TITLE ---------- */
+.title{
+  font-family:'Cinzel', serif;
+  font-weight:700;
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  letter-spacing: 1px;
+  color: var(--white);
+  opacity:0;
+  transform: translateY(14px);
+  animation: riseIn .8s ease forwards;
+  animation-delay: 2.5s;
+}
+.title span{
+  background: linear-gradient(120deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:0.85rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color: var(--ash);
+  opacity:0;
+  animation: riseIn .8s ease forwards;
+  animation-delay: 2.85s;
+}
+
+@keyframes riseIn{
+  to{ opacity:1; transform:translateY(0); }
+}

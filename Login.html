@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BharatXplore — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="particles" id="particles"></div>
+
+  <!-- top bar -->
+  <header class="topbar">
+    <div class="brand">Bharat<span>Xplore</span></div>
+
+    <div class="lang-wrap">
+      <button class="lang-btn" id="langBtn">
+        <span id="langLabel">English</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="lang-menu" id="langMenu"></div>
+    </div>
+  </header>
+
+  <!-- auth card -->
+  <main class="auth-wrap">
+    <div class="auth-card">
+
+      <div class="tabs">
+        <button class="tab active" id="tabLogin" data-i18n="tabLogin">Login</button>
+        <button class="tab" id="tabSignup" data-i18n="tabSignup">Create Account</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form class="form active" id="loginForm">
+        <h1 class="form-title" data-i18n="loginTitle">Welcome back</h1>
+        <p class="form-sub" data-i18n="loginSub">Sign in to continue exploring India.</p>
+
+        <label class="field-label" data-i18n="emailLabel">Email or phone number</label>
+        <input class="field-input" type="text" placeholder="you@example.com" required>
+
+        <label class="field-label" data-i18n="passLabel">Password</label>
+        <input class="field-input" type="password" placeholder="••••••••" required>
+
+        <button type="submit" class="submit-btn" data-i18n="signinBtn">Sign In</button>
+      </form>
+
+      <!-- CREATE ACCOUNT FORM -->
+      <form class="form" id="signupForm">
+        <h1 class="form-title" data-i18n="signupTitle">Create your account</h1>
+        <p class="form-sub" data-i18n="signupSub">Join to save trips and unlock village passes.</p>
+
+        <label class="field-label" data-i18n="nameLabel">Full name</label>
+        <input class="field-input" type="text" placeholder="Jaanu" required>
+
+        <label class="field-label" data-i18n="emailLabel">Email or phone number</label>
+        <input class="field-input" type="text" placeholder="you@example.com" required>
+
+        <label class="field-label" data-i18n="passLabel">Password</label>
+        <input class="field-input" type="password" placeholder="••••••••" required>
+
+        <label class="field-label" data-i18n="confirmLabel">Confirm password</label>
+        <input class="field-input" type="password" placeholder="••••••••" required>
+
+        <button type="submit" class="submit-btn" data-i18n="createBtn">Create Account</button>
+      </form>
+
+      <p class="switch-line">
+        <span id="switchText" data-i18n="switchToSignup">New here?</span>
+        <a id="switchLink" data-i18n="switchLinkSignup">Create an account</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- confirmation placeholder (shown after submit) -->
+  <div class="confirm-overlay" id="confirmOverlay">
+    <div class="confirm-box">
+      <p class="confirm-label" id="confirmLabel" data-i18n="confirmedLabel">Signed in</p>
+      <h2 class="confirm-heading" id="confirmHeading" data-i18n="confirmHeading">Dashboard file comes next.</h2>
+      <button class="back-btn" id="confirmBack" data-i18n="confirmBack">Back to form</button>
+    </div>
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
