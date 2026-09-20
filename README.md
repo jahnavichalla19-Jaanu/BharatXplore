@@ -39,7 +39,7 @@ BharatXplore is one tourism platform that guides a traveller from country to sta
       ☁️ GitHub Pages (hosting)
       ▶️ Run Locally
 
-           bash
+# bash
          git clone https://github.com/jahnavichalla19-Jaanu/BharatXplore.git
          cd BharatXplore
 
